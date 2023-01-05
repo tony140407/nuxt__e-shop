@@ -1,4 +1,3 @@
-<script setup></script>
 <template>
     <section class="scrollProduct container" ref="scrollProductRef">
         <div class="row justify-content-between g-0 d-none d-lg-flex">
@@ -6,11 +5,7 @@
                 class="scrollProduct_cardList col-12 col-lg-5"
                 :style="{ transform: `translateY(${rightListScroll}vh)` }"
             >
-                <div
-                    class=""
-                    v-for="eachProduct in storeData.products.slice(0, 8)"
-                    :key="eachProduct"
-                >
+                <div class="" v-for="eachProduct in products.slice(0, 8)" :key="eachProduct">
                     <Card :productDetail="eachProduct" class="mb-4" />
                 </div>
             </div>
@@ -18,11 +13,7 @@
                 class="scrollProduct_cardList col-12 col-lg-5"
                 :style="{ transform: `translateY(${leftListScroll}vh)` }"
             >
-                <div
-                    class=""
-                    v-for="eachProduct in storeData.products.slice(-8)"
-                    :key="eachProduct"
-                >
+                <div class="" v-for="eachProduct in products.slice(-8)" :key="eachProduct">
                     <Card :productDetail="eachProduct" class="mb-4" />
                 </div>
             </div>
@@ -37,23 +28,19 @@
 </template>
 
 <script setup>
-import Card from '@/components/frontend/card.vue'
-import { storeData } from '@/js/storeData.js'
-import { ref, onMounted } from 'vue'
+import { useProductsStore } from '~/store/products'
+const { products } = useProductsStore()
 
-const { data } = await useFetch('/api/products')
-const { products } = data.value
+// const emit = defineEmits(['scrollProductInstance', 'rightAndLeftPosition'])
 
-const emit = defineEmits(['scrollProductInstance', 'rightAndLeftPosition'])
-
-const scrollProductRef = ref()
-const rightListScroll = ref(-0)
-const leftListScroll = ref(-100)
-emit('rightAndLeftPosition', {
-    rightListScroll: rightListScroll,
-    leftListScroll: leftListScroll,
-})
-onMounted(() => {
-    emit('scrollProductInstance', scrollProductRef.value)
-})
+// const scrollProductRef = ref()
+// const rightListScroll = ref(-0)
+// const leftListScroll = ref(-100)
+// emit('rightAndLeftPosition', {
+//     rightListScroll: rightListScroll,
+//     leftListScroll: leftListScroll,
+// })
+// onMounted(() => {
+//     emit('scrollProductInstance', scrollProductRef.value)
+// })
 </script>

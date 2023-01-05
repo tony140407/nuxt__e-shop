@@ -1,11 +1,8 @@
 <script setup>
-// import { useCounterStore } from '~/store'
-// const counter = useCounterStore()
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+import { useProductsStore } from '~/store/products'
+const { setProducts } = useProductsStore()
+const { data } = await useFetch('http://localhost:3166/api/products')
+setProducts(data.value.products)
 </script>
 
 <template>

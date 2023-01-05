@@ -6,4 +6,5 @@ definePageMeta({
 <template>
     <FrontendHomePageBanner />
     <FrontendHomePageIntro />
+    <FrontendCard />
 </template>
