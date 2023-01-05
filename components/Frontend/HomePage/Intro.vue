@@ -14,11 +14,12 @@ onMounted(() => {
         introSection.forEach((eachSection, index) => {
             gsap.from(eachSection, {
                 x: index / 2 == 0 ? -200 : 200,
+                y: 100,
                 opacity: 0,
                 scrollTrigger: {
                     trigger: eachSection,
-                    start: 'top 60%',
-                    end: 'top 5%',
+                    start: 'top 85%',
+                    end: 'top 20%',
                     scrub: true,
                     markers: true,
                 },

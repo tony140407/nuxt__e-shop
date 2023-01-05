@@ -1,3 +1,4 @@
+<script setup></script>
 <template>
     <section class="scrollProduct container" ref="scrollProductRef">
         <div class="row justify-content-between g-0 d-none d-lg-flex">
@@ -39,6 +40,10 @@
 import Card from '@/components/frontend/card.vue'
 import { storeData } from '@/js/storeData.js'
 import { ref, onMounted } from 'vue'
+
+const { data } = await useFetch('/api/products')
+const { products } = data.value
+
 const emit = defineEmits(['scrollProductInstance', 'rightAndLeftPosition'])
 
 const scrollProductRef = ref()
