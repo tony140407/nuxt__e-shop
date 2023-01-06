@@ -43,14 +43,14 @@ onUnmounted(() => {
         <div class="grid grid-cols-2">
             <div class="ScrollProduct--left -translate-y-24" ref="leftSection">
                 <FrontendCard
-                    v-for="eachProductDetail in products.slice(0, 5)"
+                    v-for="eachProductDetail in products.slice(0, 10)"
                     :key="eachProductDetail"
                     :productDetail="eachProductDetail"
                 />
             </div>
             <div class="ScrollProduct--right -translate-y-1/4" ref="rightSection">
                 <FrontendCard
-                    v-for="eachProductDetail in products.slice(-5)"
+                    v-for="eachProductDetail in products.slice(-10)"
                     :key="eachProductDetail"
                     :productDetail="eachProductDetail"
                 />
