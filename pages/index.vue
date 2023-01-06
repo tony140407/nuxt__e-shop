@@ -4,7 +4,9 @@ definePageMeta({
 })
 </script>
 <template>
-    <FrontendHomePageBanner />
-    <FrontendHomePageIntro />
-    <FrontendCard />
+    <section class="overflow-hidden">
+        <FrontendHomePageBanner />
+        <FrontendHomePageIntro />
+        <FrontendHomePageScrollProduct />
+    </section>
 </template>
