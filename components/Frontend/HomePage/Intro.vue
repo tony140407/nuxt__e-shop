@@ -21,7 +21,6 @@ onMounted(() => {
                     start: 'top 85%',
                     end: 'top 20%',
                     scrub: true,
-                    markers: true,
                 },
             })
         })

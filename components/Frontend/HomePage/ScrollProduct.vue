@@ -12,14 +12,11 @@ const rightSection = ref()
 const ctx = ref()
 
 onMounted(() => {
-    console.log(rightSection)
-    console.log(main)
     ctx.value = gsap.context((self) => {
         const scrollPin = gsap.timeline({
             scrollTrigger: {
                 trigger: main.value,
                 scrub: true,
-                markers: true,
                 pin: true,
             },
         })

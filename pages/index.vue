@@ -1,10 +1,11 @@
 <script setup>
 definePageMeta({
     title: 'Wardrobe | 首頁',
+    layout: 'default',
 })
 </script>
 <template>
-    <section class="overflow-hidden">
+    <section>
         <FrontendHomePageBanner />
         <FrontendHomePageIntro />
         <FrontendHomePageScrollProduct />

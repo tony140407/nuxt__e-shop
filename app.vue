@@ -20,5 +20,9 @@ await useFetch('http://localhost:3166/api/products').then(
 </script>
 
 <template>
-    <NuxtPage />
+    <div>
+        <NuxtLayout>
+            <NuxtPage />
+        </NuxtLayout>
+    </div>
 </template>
