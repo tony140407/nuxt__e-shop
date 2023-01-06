@@ -1,14 +1,18 @@
 <script setup>
-const isOnSale = ref(true)
-const productDetail = ref({
-    title: 'test',
-    price: 300,
-    origin_price: 500,
-    size: ['XS', 'S', 'M', 'L', 'XL'],
-    color: ['red', 'blue', 'green', 'yellow'],
-    description: 'test',
-    image: 'https://picsum.photos/200/300',
+const props = defineProps({
+    productDetail: {
+        type: Object,
+        default: () => ({
+            title: '預設產品名稱',
+            price: 0,
+            origin_price: 0,
+            size: [],
+            imageUrl: 'https://picsum.photos/200/300',
+            onSale: true, // FIXME: 測試時用，之後要改成 false
+        }),
+    },
 })
+const productDetail = ref(props.productDetail)
 const card_detail_size = ref('XS')
 </script>
 <template>
@@ -18,7 +22,10 @@ const card_detail_size = ref('XS')
     >
         <div class="flex flex-row gap-3">
             <div class="relative my-5 basis-1/2">
-                <img class="h-full w-full" src="https://picsum.photos/200/300" alt="" />
+                <div
+                    class="h-full w-full bg-cover bg-center bg-no-repeat"
+                    :style="{ 'background-image': `url(${productDetail.imageUrl})` }"
+                ></div>
                 <button
                     class="absolute bottom-0 left-1/2 hidden w-4/5 -translate-x-1/2 -translate-y-1/2 transform rounded-xl bg-white py-3 ring ring-slate-300 ring-offset-2 group-hover:block"
                     @click="clickToSeeMorePage(currentProductID)"
@@ -28,11 +35,11 @@ const card_detail_size = ref('XS')
             </div>
             <div class="basis-1/2">
                 <div class="box-border flex h-2/5 flex-col justify-between py-5 text-white">
-                    <h4 class="text-xl font-extrabold">{{ productDetail.title }}</h4>
+                    <h4 class="text-xl font-extrabold">{{ productDetail?.title }}</h4>
                     <div class="flex items-end justify-between">
                         <p class="">NT${{ 300 }}</p>
-                        <del v-if="isOnSale" class="text-xs">
-                            NT${{ productDetail.origin_price }}
+                        <del v-if="productDetail.onSale" class="text-xs">
+                            NT${{ productDetail?.origin_price }}
                         </del>
                     </div>
                 </div>
@@ -92,6 +99,6 @@ const card_detail_size = ref('XS')
             </div>
         </div>
         <!-- <span class="card_likeIcon" :class="{ 'card_likeIcon--active': card_likeIcon_isActive }" @click="card_likeIcon_isActive = !card_likeIcon_isActive"><font-awesome-icon :icon="card_likeIcon_isActive ? ['fas', 'heart'] : ['far', 'heart']" /></span>
-  <div class="card_onSale" v-if="isOnSale"><img src="@/assets/images/icons/onSale.svg" alt="" srcset=""> on sale</div> -->
+  <div class="card_onSale" v-if="productDetail.onSale"><img src="@/assets/images/icons/onSale.svg" alt="" srcset=""> on sale</div> -->
     </section>
 </template>

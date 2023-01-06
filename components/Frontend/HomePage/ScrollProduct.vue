@@ -3,8 +3,9 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-// import { useProductsStore } from '~/store/products'
-// const { products } = useProductsStore()
+import { useProductsStore } from '~/store/products'
+const { products } = useProductsStore()
+
 gsap.registerPlugin(ScrollTrigger)
 const main = ref()
 const leftSection = ref()
@@ -40,23 +41,19 @@ onUnmounted(() => {
 <template>
     <section class="ScrollProduct container mx-auto h-screen overflow-hidden relative" ref="main">
         <div class="grid grid-cols-2">
-            <div class="ScrollProduct--left translate-y-20" ref="leftSection">
-                <FrontendCard />
-                <FrontendCard />
-                <FrontendCard />
-                <FrontendCard />
-                <FrontendCard />
-                <FrontendCard />
-                <FrontendCard />
+            <div class="ScrollProduct--left -translate-y-24" ref="leftSection">
+                <FrontendCard
+                    v-for="eachProductDetail in products.slice(0, 5)"
+                    :key="eachProductDetail"
+                    :productDetail="eachProductDetail"
+                />
             </div>
             <div class="ScrollProduct--right -translate-y-1/4" ref="rightSection">
-                <FrontendCard />
-                <FrontendCard />
-                <FrontendCard />
-                <FrontendCard />
-                <FrontendCard />
-                <FrontendCard />
-                <FrontendCard />
+                <FrontendCard
+                    v-for="eachProductDetail in products.slice(-5)"
+                    :key="eachProductDetail"
+                    :productDetail="eachProductDetail"
+                />
             </div>
         </div>
 
