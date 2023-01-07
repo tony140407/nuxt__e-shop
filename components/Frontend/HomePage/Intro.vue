@@ -46,7 +46,7 @@ onUnmounted(() => {
             </div>
 
             <div class="intro_section grid grid-cols-1 md:grid-cols-2">
-                <div class="md:order-2 intro_img intro_img_aboutProducts"></div>
+                <div class="intro_img intro_img_aboutProducts md:order-2"></div>
                 <div class="md:order-md-1 intro_text">
                     <h3 class="intro_text_title order-last">關於包裹</h3>
                     <p class="intro_text_content">

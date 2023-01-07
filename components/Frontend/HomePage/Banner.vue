@@ -16,26 +16,26 @@
 
 <style lang="scss" scoped>
 .banner {
-    @apply relative w-full h-screen bg-cover bg-center overflow-hidden;
+    @apply relative h-screen w-full overflow-hidden bg-cover bg-center;
     background-image: url('@/assets/images/banner.jpg');
     &_wrapper {
         @apply container;
     }
     &_welcome {
-        @apply w-[350px] box-border mt-[60px] p-[20px] text-white bg-opacity-30 font-bold;
+        @apply mt-[60px] box-border w-[350px] bg-opacity-30 p-[20px] font-bold text-white;
         &_title {
-            @apply text-3xl border-2 border-white mb-[30px] text-center;
+            @apply mb-[30px] border-2 border-white text-center text-3xl;
         }
         &_btn {
-            @apply text-2xl p-[10px] block mx-auto text-center border-2 border-white;
+            @apply mx-auto block border-2 border-white p-[10px] text-center text-2xl;
             &:hover {
                 @apply bg-white text-green-400;
             }
         }
     }
     &_triangle {
-        @apply pt-[40px] absolute -bottom-24 -right-48 w-[500px] h-[300px] -rotate-45;
-        @apply bg-green-400 text-center text-white z-10 font-bold text-3xl;
+        @apply absolute -bottom-24 -right-48 h-[300px] w-[500px] -rotate-45 pt-[40px];
+        @apply z-10 bg-green-400 text-center text-3xl font-bold text-white;
     }
 }
 </style>

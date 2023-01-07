@@ -1,7 +1,7 @@
 <template>
     <!-- ClientOnly 避免 [Vue warn]: Hydration node mismatch -->
     <ClientOnly>
-        <section class="overflow-hidden flex flex-col min-h-screen">
+        <section class="flex min-h-screen flex-col overflow-hidden">
             <FrontendNavbar />
             <div class="grow">
                 <slot></slot>

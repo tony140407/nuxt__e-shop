@@ -39,7 +39,7 @@ onUnmounted(() => {
 })
 </script>
 <template>
-    <section class="ScrollProduct container mx-auto h-screen overflow-hidden relative" ref="main">
+    <section class="ScrollProduct container relative mx-auto h-screen overflow-hidden" ref="main">
         <div class="grid grid-cols-2">
             <div class="ScrollProduct--left -translate-y-24" ref="leftSection">
                 <FrontendCard
@@ -58,10 +58,10 @@ onUnmounted(() => {
         </div>
 
         <div
-            class="bg-green-400 text-center w-4/5 h-1/3 aspect-video hover:aspect-square absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl"
+            class="absolute top-1/2 left-1/2 aspect-video h-1/3 w-4/5 -translate-x-1/2 -translate-y-1/2 transform rounded-2xl bg-green-400 text-center hover:aspect-square"
         >
             <p
-                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-extrabold text-3xl"
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform text-3xl font-extrabold text-white"
             >
                 超過50種商品等你訂購
             </p>

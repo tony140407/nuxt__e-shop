@@ -17,7 +17,7 @@ const card_detail_size = ref('XS')
 </script>
 <template>
     <section
-        class="group w-full rounded-2xl px-5 drop-shadow-xl min-w-[340px]"
+        class="group w-full min-w-[340px] rounded-2xl px-5 drop-shadow-xl"
         style="background: linear-gradient(180deg, #000 40%, #fff 40%)"
     >
         <div class="flex flex-row gap-5">
