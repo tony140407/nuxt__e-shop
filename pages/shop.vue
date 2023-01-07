@@ -12,14 +12,14 @@ definePageMeta({
 })
 </script>
 <template>
-    <section class="container mx-auto">
-        <div class="lg:flex gap-6 mx-4 :md:ms-auto">
+    <section class="container mx-auto relative">
+        <div class="lg:flex gap-6 mx-4 :md:ms-auto mt-10">
             <FrontendShopSidebar
                 class="basis-1/4"
                 :changeCategory="changeCategory"
                 :currentCategory="currentCategory"
             />
-            <div class="basis-3/4 mt-10">
+            <div class="basis-3/4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <transition-group name="fade">
                         <div

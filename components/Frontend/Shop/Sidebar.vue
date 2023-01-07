@@ -21,9 +21,9 @@ const props = defineProps({
 </script>
 
 <template>
-    <section class="h-4/5 bg-lime-100 rounded-2xl mt-10">
+    <section class="h-4/5 bg-lime-100 rounded-2xl sticky top-0">
         <ul
-            class="sticky lg:gap-4 flex flex-wrap items-center justify-center gap-2 px-4 py-6 lg:py-10 text-xl font-extrabold lg:flex-col lg:items-stretch"
+            class="lg:gap-4 flex flex-wrap items-center justify-center gap-2 px-4 py-6 lg:py-10 text-xl font-extrabold lg:flex-col lg:items-stretch"
         >
             <li class="flex justify-center">
                 <button

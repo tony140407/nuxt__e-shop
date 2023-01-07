@@ -21,7 +21,7 @@ const card_detail_size = ref('XS')
         style="background: linear-gradient(180deg, #000 40%, #fff 40%)"
     >
         <div class="flex flex-row gap-5">
-            <div class="relative my-5 basis-1/3">
+            <div class="relative my-5 basis-2/5">
                 <div
                     class="h-full w-full bg-cover bg-center bg-no-repeat"
                     :style="{ 'background-image': `url(${productDetail.imageUrl})` }"
@@ -33,7 +33,7 @@ const card_detail_size = ref('XS')
                     查看更多
                 </button>
             </div>
-            <div class="basis-2/3">
+            <div class="basis-3/5">
                 <div class="box-border flex h-2/5 flex-col justify-between py-5 text-white">
                     <h4 class="text-xl font-extrabold">{{ productDetail?.title }}</h4>
                     <div class="flex items-end justify-between">
