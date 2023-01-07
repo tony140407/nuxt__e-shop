@@ -16,6 +16,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
     "gsap": "^3.11.4",
-    "pinia": "^2.0.28"
+    "pinia": "^2.0.28",
+    "swiper": "^8.4.5"
   }
 }
