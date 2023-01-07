@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-slate-400">
+    <section class="bg-slate-400 Footer">
         <div class="container px-5 py-10 text-white text-xl">
             <h4 class="text-2xl font-extrabold mb-5 border-b-4 inline-block border-white">
                 聯絡我們
@@ -15,3 +15,9 @@
         <p class="bg-white text-center p-2">Copyright © 2023 tony140407. All rights reserved.</p>
     </section>
 </template>
+<style scoped>
+.Footer {
+    background: url('@/assets/images/footerBg.jpg') no-repeat center center;
+}
+</style>
+e

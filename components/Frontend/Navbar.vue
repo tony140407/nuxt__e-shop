@@ -1,5 +1,5 @@
 <template>
-    <header class="m-4 rounded border-gray-200 bg-gray-50 p-3">
+    <header class="rounded border-gray-200 bg-gray-50 p-3">
         <div
             class="container mx-auto flex flex-wrap items-center justify-center md:justify-between"
         >

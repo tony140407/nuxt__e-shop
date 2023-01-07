@@ -58,6 +58,17 @@ export const useProductsStore = defineStore('products', () => {
             return newProducts
         }
     }
+    function filterCategory(category) {
+        // 如果沒有選擇分類，回傳全部
+        if (category == '全部') {
+            return products.value
+        }
+        return products.value.filter((eachProduct) => {
+            if (eachProduct.category == category) {
+                return true
+            }
+        })
+    }
 
-    return { products, setProducts }
+    return { products, setProducts, filterCategory }
 })
