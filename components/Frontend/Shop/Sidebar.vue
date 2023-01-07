@@ -21,12 +21,14 @@ const props = defineProps({
 </script>
 
 <template>
-    <section class="bg-fuchsia-100 h-100">
-        <ul class="flex flex-col items-stretch gap-5">
+    <section class="h-4/5 bg-lime-100 rounded-2xl mt-10">
+        <ul
+            class="sticky lg:gap-4 flex flex-wrap items-center justify-center gap-2 px-4 py-6 lg:py-10 text-xl font-extrabold lg:flex-col lg:items-stretch"
+        >
             <li class="flex justify-center">
                 <button
-                    class="mx-auto w-4/5 rounded-2xl border-2 border-transparent py-4 hover:border-green-300"
-                    :class="{ 'sidebar_btn--active': currentCategory == '全部' }"
+                    class="mx-auto rounded-2xl border-2 border-transparent bg-white py-3 px-5 hover:border-lime-500 lg:w-4/5 lg:py-0 lg:px-0"
+                    :class="{ 'bg-lime-300 text-white': props.currentCategory == '全部' }"
                     @click="props.changeCategory('全部')"
                 >
                     全部
@@ -34,8 +36,8 @@ const props = defineProps({
             </li>
             <li class="flex justify-center">
                 <button
-                    class="w-4/5 rounded-2xl border-2 border-transparent py-2 hover:border-green-300"
-                    :class="{ 'sidebar_btn--active': currentCategory == '衣服' }"
+                    class="mx-auto rounded-2xl border-2 border-transparent bg-white py-3 px-5 hover:border-lime-500 lg:w-4/5 lg:py-0 lg:px-0"
+                    :class="{ 'bg-lime-300 text-white': props.currentCategory == '衣服' }"
                     @click="props.changeCategory('衣服')"
                 >
                     衣服
@@ -43,8 +45,8 @@ const props = defineProps({
             </li>
             <li class="flex justify-center">
                 <button
-                    class="w-4/5 rounded-2xl border-2 border-transparent py-2 hover:border-green-300"
-                    :class="{ 'sidebar_btn--active': currentCategory == '褲子' }"
+                    class="mx-auto rounded-2xl border-2 border-transparent bg-white py-3 px-5 hover:border-lime-500 lg:w-4/5 lg:py-0 lg:px-0"
+                    :class="{ 'bg-lime-300 text-white': props.currentCategory == '褲子' }"
                     @click="props.changeCategory('褲子')"
                 >
                     褲子
@@ -52,8 +54,8 @@ const props = defineProps({
             </li>
             <li class="flex justify-center">
                 <button
-                    class="w-4/5 rounded-2xl border-2 border-transparent py-2 hover:border-green-300"
-                    :class="{ 'sidebar_btn--active': currentCategory == '鞋子' }"
+                    class="mx-auto rounded-2xl border-2 border-transparent bg-white py-3 px-5 hover:border-lime-500 lg:w-4/5 lg:py-0 lg:px-0"
+                    :class="{ 'bg-lime-300 text-white': props.currentCategory == '鞋子' }"
                     @click="props.changeCategory('鞋子')"
                 >
                     鞋子
@@ -61,8 +63,8 @@ const props = defineProps({
             </li>
             <li class="flex justify-center">
                 <button
-                    class="w-4/5 rounded-2xl border-2 border-transparent py-2 hover:border-green-300"
-                    :class="{ 'sidebar_btn--active': currentCategory == '外套' }"
+                    class="mx-auto rounded-2xl border-2 border-transparent bg-white py-3 px-5 hover:border-lime-500 lg:w-4/5 lg:py-0 lg:px-0"
+                    :class="{ 'bg-lime-300 text-white': props.currentCategory == '外套' }"
                     @click="props.changeCategory('外套')"
                 >
                     外套
