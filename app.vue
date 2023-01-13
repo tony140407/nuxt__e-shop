@@ -1,8 +1,9 @@
 <script setup>
 import { useProductsStore } from '~/store/products'
 const { setProducts } = useProductsStore()
-await useFetch('http://localhost:3166/api/products').then(
+await useFetch('/api/products').then(
     (res) => {
+        console.log(res)
         const data = res.data.value
         const error = res.error.value
         if (error) {

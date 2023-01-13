@@ -1,5 +1,9 @@
 <script setup>
-const cart = ref([
+import { useCartStore } from '~/store/cart'
+const cartStore = useCartStore()
+const cart = computed(() => cartStore.cart)
+
+cartStore.setCart([
     {
         final_total: 399,
         id: '-NLJIVjxW24aDeAY6TcI',
@@ -49,26 +53,6 @@ const cart = ref([
         total: 399,
     },
 ])
-await useFetch('/api/cart').then(
-    (res) => {
-        console.log(res)
-        const data = res.data.value
-        const error = res.error.value
-        if (error) {
-            // dealing error
-            console.error(error)
-        } else {
-            //儲存到pinia
-            console.log(data.data.carts)
-        }
-    },
-    (error) => {
-        console.log('exception...')
-        console.log(error)
-    },
-)
-
-const step = ref(1)
 
 definePageMeta({
     title: 'Wardrobe | Cart',
@@ -77,9 +61,9 @@ definePageMeta({
 </script>
 <template>
     <section class="mg:p-0 container mx-auto mt-10 px-5">
-        <FrontendCartStepBar v-if="step !== -1" :step="step" class="mb-5"></FrontendCartStepBar>
+        <FrontendCartStepBar class="mb-5"></FrontendCartStepBar>
         <h3 class="border-b-2 border-lime-500 text-2xl font-extrabold text-lime-500">購物車</h3>
-        <div class="h-100 w-100 flex items-center justify-center py-6">
+        <div class="h-100 w-100 flex flex-col items-center justify-center py-6">
             <FrontendCartSelectedProduct
                 :cart="cart"
                 v-if="cart.length > 0"
