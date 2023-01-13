@@ -1,7 +1,10 @@
 <script setup>
 import { useCartStore } from '~/store/cart'
-const { currentCartStep } = useCartStore()
+const cartStore = useCartStore()
 const todoList = ref(['確認資料', '付款與運送方式', '完成訂購'])
+const currentCartStep = computed(() => {
+    return cartStore.currentCartStep
+})
 </script>
 <template>
     <div v-if="currentCartStep !== 0" class="relative h-10 w-full rounded-full bg-lime-50">

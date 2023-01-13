@@ -2,6 +2,7 @@
 import { useCartStore } from '~/store/cart'
 const cartStore = useCartStore()
 const cart = computed(() => cartStore.cart)
+const currentCartStep = computed(() => cartStore.currentCartStep)
 
 cartStore.setCart([
     {
@@ -64,10 +65,13 @@ definePageMeta({
         <FrontendCartStepBar class="mb-5"></FrontendCartStepBar>
         <h3 class="border-b-2 border-lime-500 text-2xl font-extrabold text-lime-500">購物車</h3>
         <div class="h-100 w-100 flex flex-col items-center justify-center py-6">
-            <FrontendCartSelectedProduct
-                :cart="cart"
-                v-if="cart.length > 0"
-            ></FrontendCartSelectedProduct>
+            <FrontendCartAllSteps v-if="cart.length > 0">
+                <template #content>
+                    <FrontendCartSelectedProduct v-if="currentCartStep === 1" :cart="cart" />
+                    <FrontendCartEmpty v-if="currentCartStep === 3"></FrontendCartEmpty>
+                </template>
+            </FrontendCartAllSteps>
+
             <FrontendCartEmpty v-else></FrontendCartEmpty>
         </div>
     </section>

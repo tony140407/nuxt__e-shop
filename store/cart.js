@@ -4,7 +4,6 @@ export const useCartStore = defineStore('cart', () => {
     const currentCartStep = ref(0)
 
     function setCart(_cart) {
-        console.log(_cart.length)
         cart.value = _cart
         if (cart.value.length > 0) {
             setCurrentCartStep(1)

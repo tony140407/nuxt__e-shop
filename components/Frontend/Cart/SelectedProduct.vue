@@ -102,7 +102,7 @@ const shippingFee = computed(() => {
 </script>
 
 <template>
-    <ul class="mb-5 w-full" @click="handleClick">
+    <ul class="mb-5 w-full border-b-2 border-lime-500" @click="handleClick">
         <li
             class="mb-8 grid grid-cols-12 overflow-hidden rounded-2xl bg-gray-100 drop-shadow-md"
             v-for="eachProduct in cart"
@@ -171,26 +171,18 @@ const shippingFee = computed(() => {
         </li>
     </ul>
 
-    <section class="w-full border-t-2 border-lime-500">
-        <div class="mb-8 flex justify-between">
+    <section class="w-full">
+        <div class="mb-8 flex justify-end gap-4 md:justify-between">
             <h3 class="text-xl font-semibold">總金額</h3>
             <p class="text-xl font-semibold">NT$ {{ total }}</p>
         </div>
-        <div class="mb-8 flex justify-between">
+        <div class="mb-8 flex justify-end gap-4 md:justify-between">
             <h3 class="text-xl font-semibold">運費</h3>
             <p class="text-xl font-semibold">NT$ {{ shippingFee }}</p>
         </div>
-        <div class="mb-8 flex justify-between">
+        <div class="flex justify-end gap-4 md:justify-between">
             <h3 class="text-xl font-semibold">總計</h3>
-            <p class="text-xl font-semibold">NT$ {{ total + shipping }}</p>
-        </div>
-        <div class="flex justify-end">
-            <button
-                class="w-1/3 rounded-md bg-green-400 py-2 text-white transition-all duration-200 ease-in-out hover:bg-green-600"
-                @click="handleCheckout"
-            >
-                結帳
-            </button>
+            <p class="text-xl font-semibold">NT$ {{ total + shippingFee }}</p>
         </div>
     </section>
 </template>
