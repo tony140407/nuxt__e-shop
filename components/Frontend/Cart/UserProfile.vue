@@ -6,7 +6,7 @@ const connectDetail = ref({
 })
 </script>
 <template>
-    <section class="m-5 w-full overflow-hidden rounded-2xl bg-gray-100 drop-shadow-md">
+    <section class="w-full overflow-hidden rounded-2xl bg-gray-100 drop-shadow-md">
         <!-- <div class="min-h-[120px] p-5 py-7 text-xl">
             <div class="relative mx-auto flex h-full w-4/5 flex-col justify-between">
                 <p v-if="connectDetail.name" class="mb-3">{{ connectDetail.name }} 先生/小姐</p>

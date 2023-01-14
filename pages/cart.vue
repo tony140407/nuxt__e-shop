@@ -61,7 +61,7 @@ definePageMeta({
 })
 </script>
 <template>
-    <section class="mg:p-0 container mx-auto mt-10 px-5">
+    <section class="mg:p-0 container mx-auto my-10 px-5">
         <FrontendCartStepBar class="mb-5"></FrontendCartStepBar>
         <h3 class="border-b-2 border-lime-500 text-2xl font-extrabold text-lime-500">購物車</h3>
         <div class="h-100 w-100 flex flex-col items-center justify-center py-6">

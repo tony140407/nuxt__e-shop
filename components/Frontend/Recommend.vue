@@ -28,7 +28,7 @@ const breakpoints = {
 const renderProducts = ref(products.slice(0, 8) || [])
 </script>
 <template>
-    <section class="mg:p-0 container mx-auto px-5">
+    <section class="mg:p-0 container mx-auto mb-8 px-5">
         <h3
             class="mb-4 inline-block border-b-2 border-lime-500 text-2xl font-extrabold text-lime-500"
         >
