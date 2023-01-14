@@ -16,7 +16,7 @@
 
 <style lang="scss" scoped>
 .banner {
-    @apply relative h-screen w-full overflow-hidden bg-cover bg-center;
+    @apply relative h-screen max-h-[1080px] w-full overflow-hidden bg-cover bg-center;
     background-image: url('@/assets/images/banner.jpg');
     &_wrapper {
         @apply container;

@@ -33,7 +33,7 @@ onUnmounted(() => {
 </script>
 <template>
     <section class="intro" ref="main">
-        <div class="container my-5">
+        <div class="container my-5 mx-auto">
             <div class="intro_section grid grid-cols-1 md:grid-cols-2">
                 <div class="intro_img intro_img_aboutUs"></div>
                 <div class="intro_text">

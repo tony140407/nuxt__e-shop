@@ -68,7 +68,10 @@ definePageMeta({
             <FrontendCartAllSteps v-if="cart.length > 0">
                 <template #content>
                     <FrontendCartSelectedProduct v-if="currentCartStep === 1" :cart="cart" />
-                    <FrontendCartEmpty v-if="currentCartStep === 3"></FrontendCartEmpty>
+                    <FrontendCartUserProfile
+                        v-else-if="currentCartStep === 2"
+                    ></FrontendCartUserProfile>
+                    <FrontendCartEmpty v-else></FrontendCartEmpty>
                 </template>
             </FrontendCartAllSteps>
 
