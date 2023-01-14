@@ -10,7 +10,7 @@ const currentCartStep = computed(() => {
     <div class="mt-8 flex w-full flex-row-reverse justify-between gap-8">
         <div class="w-full">
             <button
-                class="w-full rounded-2xl bg-green-100 py-5 text-xl"
+                class="w-full rounded-2xl bg-lime-200 py-5 text-xl font-semibold hover:shadow-md"
                 v-show="currentCartStep < 3"
                 @click="cartStore.setCurrentCartStep(currentCartStep + 1)"
             >
@@ -19,7 +19,7 @@ const currentCartStep = computed(() => {
         </div>
         <div class="w-full">
             <button
-                class="w-full rounded-2xl bg-gray-100 py-5 text-xl"
+                class="w-full rounded-2xl bg-gray-100 py-5 text-xl font-semibold hover:shadow-md"
                 v-show="currentCartStep > 1"
                 @click="cartStore.setCurrentCartStep(currentCartStep - 1)"
             >

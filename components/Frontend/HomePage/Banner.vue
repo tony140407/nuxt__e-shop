@@ -29,13 +29,13 @@
         &_btn {
             @apply mx-auto block border-2 border-white p-[10px] text-center text-2xl;
             &:hover {
-                @apply bg-white text-green-400;
+                @apply bg-white text-lime-500;
             }
         }
     }
     &_triangle {
         @apply absolute -bottom-24 -right-48 h-[300px] w-[500px] -rotate-45 pt-[40px];
-        @apply z-10 bg-green-400 text-center text-3xl font-bold text-white;
+        @apply z-10 bg-lime-500 text-center text-3xl font-bold text-white;
     }
 }
 </style>

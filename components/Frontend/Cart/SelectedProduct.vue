@@ -146,7 +146,7 @@ const shippingFee = computed(() => {
                                 :disabled="eachProduct.qty == 1"
                                 :data-cartID="eachProduct.id"
                                 :data-productID="eachProduct.product_id"
-                                class="max-w-16 absolute left-0 h-10 w-1/6 rounded-l-md bg-green-400 text-xs font-semibold text-white transition-all duration-200 ease-in-out hover:bg-green-600 disabled:bg-gray-400"
+                                class="max-w-16 absolute left-0 h-10 w-1/6 rounded-l-md bg-lime-500 text-xs font-semibold text-white transition-all duration-200 ease-in-out hover:bg-lime-600 disabled:bg-gray-400"
                             >
                                 -
                             </button>
@@ -154,7 +154,7 @@ const shippingFee = computed(() => {
                                 id="plus"
                                 :data-cartID="eachProduct.id"
                                 :data-productID="eachProduct.product_id"
-                                class="max-w-16 absolute right-0 h-10 w-1/5 rounded-r-md bg-green-400 text-xs font-semibold text-white transition-all duration-200 ease-in-out hover:bg-green-600"
+                                class="max-w-16 absolute right-0 h-10 w-1/5 rounded-r-md bg-lime-500 text-xs font-semibold text-white transition-all duration-200 ease-in-out hover:bg-lime-600"
                             >
                                 +
                             </button>
@@ -172,15 +172,15 @@ const shippingFee = computed(() => {
     </ul>
 
     <section class="w-full">
-        <div class="mb-8 flex justify-end gap-4 md:justify-between">
+        <div class="mb-8 flex justify-between gap-4 md:justify-end">
             <h3 class="text-xl font-semibold">總金額</h3>
             <p class="text-xl font-semibold">NT$ {{ total }}</p>
         </div>
-        <div class="mb-8 flex justify-end gap-4 md:justify-between">
+        <div class="mb-8 flex justify-between gap-4 md:justify-end">
             <h3 class="text-xl font-semibold">運費</h3>
             <p class="text-xl font-semibold">NT$ {{ shippingFee }}</p>
         </div>
-        <div class="flex justify-end gap-4 md:justify-between">
+        <div class="flex justify-between gap-4 md:justify-end">
             <h3 class="text-xl font-semibold">總計</h3>
             <p class="text-xl font-semibold">NT$ {{ total + shippingFee }}</p>
         </div>

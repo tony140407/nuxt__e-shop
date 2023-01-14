@@ -46,43 +46,43 @@ const card_detail_size = ref('XS')
                 <div class="box-border flex h-3/5 flex-col justify-end py-5">
                     <div class="grid grid-cols-3 gap-4">
                         <div
-                            class="cursor-pointer border-b-4 border-white text-center hover:border-green-300"
-                            :class="{ 'border-green-300': card_detail_size == 'XS' }"
+                            class="cursor-pointer border-b-4 border-white text-center hover:border-lime-300"
+                            :class="{ 'border-lime-300': card_detail_size == 'XS' }"
                             @click="card_detail_size = 'XS'"
                         >
                             XS
                         </div>
                         <div
-                            class="cursor-pointer border-b-4 border-white text-center hover:border-green-300"
-                            :class="{ 'border-green-300': card_detail_size == 'S' }"
+                            class="cursor-pointer border-b-4 border-white text-center hover:border-lime-300"
+                            :class="{ 'border-lime-300': card_detail_size == 'S' }"
                             @click="card_detail_size = 'S'"
                         >
                             S
                         </div>
                         <div
-                            class="cursor-pointer border-b-4 border-white text-center hover:border-green-300"
-                            :class="{ 'border-green-300': card_detail_size == 'M' }"
+                            class="cursor-pointer border-b-4 border-white text-center hover:border-lime-300"
+                            :class="{ 'border-lime-300': card_detail_size == 'M' }"
                             @click="card_detail_size = 'M'"
                         >
                             M
                         </div>
                         <div
-                            class="cursor-pointer border-b-4 border-white text-center hover:border-green-300"
-                            :class="{ 'border-green-300': card_detail_size == 'L' }"
+                            class="cursor-pointer border-b-4 border-white text-center hover:border-lime-300"
+                            :class="{ 'border-lime-300': card_detail_size == 'L' }"
                             @click="card_detail_size = 'L'"
                         >
                             L
                         </div>
                         <div
-                            class="cursor-pointer border-b-4 border-white text-center hover:border-green-300"
-                            :class="{ 'border-green-300': card_detail_size == 'XL' }"
+                            class="cursor-pointer border-b-4 border-white text-center hover:border-lime-300"
+                            :class="{ 'border-lime-300': card_detail_size == 'XL' }"
                             @click="card_detail_size = 'XL'"
                         >
                             XL
                         </div>
                         <div
-                            class="cursor-pointer border-b-4 border-white text-center hover:border-green-300"
-                            :class="{ 'border-green-300': card_detail_size == '2XL' }"
+                            class="cursor-pointer border-b-4 border-white text-center hover:border-lime-300"
+                            :class="{ 'border-lime-300': card_detail_size == '2XL' }"
                             @click="card_detail_size = '2XL'"
                         >
                             2XL

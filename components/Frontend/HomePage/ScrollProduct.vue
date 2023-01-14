@@ -63,7 +63,7 @@ onUnmounted(() => {
         </div>
 
         <div
-            class="scrollProduct_slogan absolute top-1/2 left-1/2 min-h-[100px] w-3/5 -translate-x-1/2 -translate-y-1/2 transform rounded-2xl bg-green-400 py-20 text-center after:border-t-green-300"
+            class="scrollProduct_slogan absolute top-1/2 left-1/2 min-h-[100px] w-3/5 -translate-x-1/2 -translate-y-1/2 transform rounded-2xl bg-lime-500 py-20 text-center after:border-t-lime-300"
         >
             <p
                 class="absolute top-1/2 left-1/2 w-4/5 -translate-x-1/2 -translate-y-1/2 transform text-4xl font-extrabold text-white"
