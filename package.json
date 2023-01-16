@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
+    "firebase": "^9.15.0",
     "gsap": "^3.11.4",
     "pinia": "^2.0.28",
     "sweetalert2": "^11.4.8",
