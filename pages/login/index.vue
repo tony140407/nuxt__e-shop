@@ -1,13 +1,15 @@
 <script setup>
-const { signInByEmail } = useFirebaseAuth()
+const { errors, useFieldModel } = useVeeValidate()
+const [email, password] = useFieldModel(['email', 'password'])
 
-const user = reactive({
-    email: '',
-    password: '',
+const inputState = reactive({
+    email: false,
+    password: false,
 })
 
-async function handleRegistration() {
-    await signInByEmail(user.email, user.password)
+const { signInByEmail } = useFirebaseAuth()
+async function handleLogin() {
+    await signInByEmail(email, password)
 }
 
 definePageMeta({
@@ -31,8 +33,12 @@ definePageMeta({
                         class="form-control m-auto block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:shadow-lg focus:outline-none"
                         id="userEmail"
                         placeholder="使用者帳號"
-                        v-model="user.email"
+                        v-model="email"
+                        @focus="() => (inputState.email = true)"
                     />
+                    <label v-if="inputState.email" for="userEmail" class="text-sm text-red-500">{{
+                        errors.email
+                    }}</label>
                 </div>
                 <div class="mb-3">
                     <input
@@ -40,12 +46,20 @@ definePageMeta({
                         class="form-control m-auto block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:shadow-lg focus:outline-none"
                         id="userPassword"
                         placeholder="密碼"
-                        v-model="user.password"
+                        v-model="password"
+                        @focus="() => (inputState.password = true)"
                     />
+                    <label
+                        v-if="inputState.password"
+                        for="userPassword"
+                        class="text-sm text-red-500"
+                        >{{ errors.password }}</label
+                    >
                 </div>
                 <button
-                    class="mb-2 w-full rounded-md bg-lime-500 py-1 font-bold text-white outline outline-1 outline-lime-500 transition-all duration-200 ease-in-out hover:bg-white hover:text-lime-500"
-                    @click="handleRegistration"
+                    class="mb-2 w-full rounded-md bg-lime-500 py-1 font-bold text-white outline outline-1 outline-lime-500 transition-all duration-200 ease-in-out hover:bg-white hover:text-lime-500 disabled:cursor-not-allowed disabled:bg-red-300 disabled:text-white"
+                    @click="handleLogin"
+                    :disabled="errors.email || errors.password"
                 >
                     登入
                 </button>
