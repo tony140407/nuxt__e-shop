@@ -1,5 +1,5 @@
 <script setup>
-const { registerUser, signInByEmail } = useFirebaseAuth()
+const { registerUser } = useFirebaseAuth()
 
 const user = reactive({
     email: '',
@@ -7,21 +7,23 @@ const user = reactive({
 })
 
 async function handleRegistration() {
-    await signInByEmail(user.email, user.password)
+    await registerUser(user.email, user.password)
 }
 
 definePageMeta({
-    title: 'Wardrobe | 登入',
+    title: 'Wardrobe | 註冊',
     layout: 'navbar',
 })
 </script>
 
 <template>
-    <section class="w-full max-w-[500px] overflow-hidden rounded-2xl bg-gray-100 drop-shadow-md">
+    <section
+        class="mx-4 w-full max-w-[500px] overflow-hidden rounded-2xl bg-gray-100 drop-shadow-md"
+    >
         <div class="p-12 sm:px-20">
             <div class="mb-8">
                 <h2 class="mb-5 border-b-2 border-lime-500 text-xl font-extrabold text-lime-500">
-                    登入
+                    註冊
                 </h2>
                 <div class="mb-3">
                     <input
@@ -42,15 +44,11 @@ definePageMeta({
                     />
                 </div>
                 <button
-                    class="mb-2 w-full rounded-md bg-lime-500 py-1 font-bold text-white outline outline-1 outline-lime-500 transition-all duration-200 ease-in-out hover:bg-white hover:text-lime-500"
+                    class="w-full rounded-md bg-lime-500 py-1 font-bold text-white outline outline-1 outline-lime-500 transition-all duration-200 ease-in-out hover:bg-white hover:text-lime-500"
                     @click="handleRegistration"
                 >
                     註冊
                 </button>
-                <div class="flex justify-between text-lime-500">
-                    <span class="cursor-pointer hover:text-lime-700">忘記密碼?</span>
-                    <span class="cursor-pointer hover:text-lime-700">尚未註冊?</span>
-                </div>
             </div>
             <div>
                 <p class="text-l mb-5 border-b-2 border-lime-500 font-extrabold text-lime-500">

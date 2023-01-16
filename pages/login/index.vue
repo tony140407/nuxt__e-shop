@@ -1,5 +1,5 @@
 <script setup>
-const { registerUser, signInByEmail } = useFirebaseAuth()
+const { signInByEmail } = useFirebaseAuth()
 
 const user = reactive({
     email: '',
@@ -17,7 +17,9 @@ definePageMeta({
 </script>
 
 <template>
-    <section class="w-full max-w-[500px] overflow-hidden rounded-2xl bg-gray-100 drop-shadow-md">
+    <section
+        class="mx-4 w-full max-w-[500px] overflow-hidden rounded-2xl bg-gray-100 drop-shadow-md"
+    >
         <div class="p-12 sm:px-20">
             <div class="mb-8">
                 <h2 class="mb-5 border-b-2 border-lime-500 text-xl font-extrabold text-lime-500">
@@ -48,8 +50,12 @@ definePageMeta({
                     登入
                 </button>
                 <div class="flex justify-between text-lime-500">
-                    <span class="cursor-pointer hover:text-lime-700">忘記密碼?</span>
-                    <span class="cursor-pointer hover:text-lime-700">尚未註冊?</span>
+                    <NuxtLink to="/login/forgetPassword" class="cursor-pointer hover:text-lime-700"
+                        >忘記密碼?</NuxtLink
+                    >
+                    <NuxtLink to="/login/signIn" class="cursor-pointer hover:text-lime-700"
+                        >尚未註冊?</NuxtLink
+                    >
                 </div>
             </div>
             <div>
