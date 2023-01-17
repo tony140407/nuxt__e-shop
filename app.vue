@@ -18,6 +18,9 @@ await useFetch('/api/products').then(
         console.log(error)
     },
 )
+
+const { persistUser } = useFirebaseAuth()
+persistUser()
 </script>
 
 <template>

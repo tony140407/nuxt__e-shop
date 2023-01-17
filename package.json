@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.2.0",
+    "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
     "nuxt": "3.0.0",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",

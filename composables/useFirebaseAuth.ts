@@ -4,8 +4,9 @@ import {
     signOut,
     User,
 } from 'firebase/auth'
-
+import { auth, useAuthStore } from '~/store/auth'
 export default function () {
+    const { auth, setAuth } = useAuthStore()
     const { showErrorMessage } = useSwalShowMessage()
     const { $auth, $sha256, $swal } = useNuxtApp()
     const user = useState<User | null>('fb_user', () => null)
@@ -13,7 +14,6 @@ export default function () {
     const registerUser = async (email: string, password: string): Promise<boolean> => {
         try {
             const userCreds = await createUserWithEmailAndPassword($auth, email, $sha256(password))
-            console.log(userCreds)
             if (userCreds) {
                 user.value = userCreds.user
                 navigateTo('/login')
@@ -33,6 +33,7 @@ export default function () {
             const _user = await signInWithEmailAndPassword($auth, email, $sha256(password))
             if (_user) {
                 user.value = _user.user
+                setAuth(_user.user)
                 navigateTo('/shop')
                 return true
             }
@@ -49,6 +50,7 @@ export default function () {
         try {
             await signOut($auth)
             user.value = null
+            setAuth(null)
             $swal
                 .fire({
                     title: 'Success',
@@ -67,11 +69,17 @@ export default function () {
         }
         return false
     }
+    const persistUser = () => {
+        if (auth) {
+            user.value = auth
+        }
+    }
 
     return {
         user,
         registerUser,
         signInByEmail,
         userSignOut,
+        persistUser,
     }
 }
