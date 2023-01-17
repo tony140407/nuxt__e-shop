@@ -1,6 +1,7 @@
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    sendPasswordResetEmail,
     signOut,
     User,
 } from 'firebase/auth'
@@ -69,6 +70,27 @@ export default function () {
         }
         return false
     }
+    const sendResetEmail = async (email: string) => {
+        try {
+            await sendPasswordResetEmail($auth, email)
+            $swal
+                .fire({
+                    title: 'Success',
+                    text: '已發送重設密碼信件至您的信箱',
+                    icon: 'success',
+                })
+                .then(() => {
+                    navigateTo('/login')
+                })
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                console.error(error)
+                showErrorMessage(error)
+            }
+            return false
+        }
+        return false
+    }
     const persistUser = () => {
         if (auth) {
             user.value = auth
@@ -80,6 +102,7 @@ export default function () {
         registerUser,
         signInByEmail,
         userSignOut,
+        sendResetEmail,
         persistUser,
     }
 }
