@@ -1,21 +1,24 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, User } from 'firebase/auth'
 
 export default function () {
-    const { $auth, $sha256 } = useNuxtApp()
+    const { showErrorMessage } = useSwalShowMessage()
+    const { $auth, $sha256, $swal } = useNuxtApp()
 
     const user = useState<User | null>('fb_user', () => null)
 
     const registerUser = async (email: string, password: string): Promise<boolean> => {
         try {
             const userCreds = await createUserWithEmailAndPassword($auth, email, $sha256(password))
+
+            console.log(userCreds)
             if (userCreds) {
                 user.value = userCreds.user
                 return true
             }
         } catch (error: unknown) {
             if (error instanceof Error) {
-                // handle error
                 console.error(error)
+                showErrorMessage(error)
             }
             return false
         }
@@ -31,8 +34,8 @@ export default function () {
             }
         } catch (error: unknown) {
             if (error instanceof Error) {
-                // handle error
                 console.error(error)
+                showErrorMessage(error)
             }
             return false
         }

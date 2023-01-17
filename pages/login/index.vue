@@ -9,7 +9,7 @@ const inputState = reactive({
 
 const { signInByEmail } = useFirebaseAuth()
 async function handleLogin() {
-    await signInByEmail(email, password)
+    await signInByEmail(email.value, password.value)
 }
 
 definePageMeta({

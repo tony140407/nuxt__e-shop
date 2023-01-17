@@ -9,7 +9,7 @@ const inputState = reactive({
 
 const { registerUser } = useFirebaseAuth()
 async function handleRegistration() {
-    await registerUser(email, password)
+    await registerUser(email.value, password.value)
 }
 
 definePageMeta({
