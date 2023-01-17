@@ -23,7 +23,7 @@ definePageMeta({
         class="mx-4 w-full max-w-[500px] overflow-hidden rounded-2xl bg-gray-100 drop-shadow-md"
     >
         <div class="p-12 sm:px-20">
-            <div class="mb-8">
+            <div class="">
                 <h2 class="mb-5 border-b-2 border-lime-500 text-xl font-extrabold text-lime-500">
                     登入
                 </h2>
@@ -59,6 +59,7 @@ definePageMeta({
                 <button
                     class="mb-2 w-full rounded-md bg-lime-500 py-1 font-bold text-white transition-all duration-200 ease-in-out hover:bg-white hover:text-lime-500 disabled:cursor-not-allowed disabled:bg-red-300 disabled:text-white"
                     @click="handleLogin"
+                    :disabled="errors.email || errors.password"
                 >
                     登入
                 </button>
@@ -71,11 +72,11 @@ definePageMeta({
                     >
                 </div>
             </div>
-            <div>
+            <!-- <div>
                 <p class="text-l mb-5 border-b-2 border-lime-500 font-extrabold text-lime-500">
                     或使用以下登入選項
                 </p>
-            </div>
+            </div> -->
         </div>
     </section>
 </template>
