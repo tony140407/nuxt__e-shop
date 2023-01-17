@@ -57,7 +57,7 @@ definePageMeta({
                     >
                 </div>
                 <button
-                    class="mb-2 w-full rounded-md bg-lime-500 py-1 font-bold text-white outline outline-1 outline-lime-500 transition-all duration-200 ease-in-out hover:bg-white hover:text-lime-500 disabled:cursor-not-allowed disabled:bg-red-300 disabled:text-white"
+                    class="mb-2 w-full rounded-md bg-lime-500 py-1 font-bold text-white transition-all duration-200 ease-in-out hover:bg-white hover:text-lime-500 disabled:cursor-not-allowed disabled:bg-red-300 disabled:text-white"
                     @click="handleRegistration"
                     :disabled="errors.email || errors.password"
                 >
