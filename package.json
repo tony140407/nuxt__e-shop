@@ -17,9 +17,13 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
+    "firebase": "^9.15.0",
     "gsap": "^3.11.4",
     "pinia": "^2.0.28",
+    "sha256": "^0.2.0",
     "sweetalert2": "^11.4.8",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "vee-validate": "^4.7.3",
+    "yup": "^0.32.11"
   }
 }
