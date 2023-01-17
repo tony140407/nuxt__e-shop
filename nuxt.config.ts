@@ -4,5 +4,5 @@ export default defineNuxtConfig({
     build: {
         transpile: ['gsap'],
     },
-    css: ['~/assets/styles/main.scss'],
+    css: ['~/assets/styles/sweetAlert2.css', '~/assets/styles/main.scss'],
 })
