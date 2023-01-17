@@ -71,6 +71,13 @@ const { user, userSignOut } = useFirebaseAuth()
                     class="py-1 text-sm text-gray-700 dark:text-gray-200"
                     aria-labelledby="dropdownDefaultButton"
                 >
+                    <li v-if="user">
+                        <span
+                            class="block cursor-default overflow-hidden text-ellipsis whitespace-nowrap px-4 py-2 text-center font-semibold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                            你好, {{ user?.email }}
+                        </span>
+                    </li>
                     <li>
                         <NuxtLink
                             to="/shop"
@@ -87,22 +94,32 @@ const { user, userSignOut } = useFirebaseAuth()
                             ˋ購物車
                         </NuxtLink>
                     </li>
-                    <li>
-                        <NuxtLink
-                            to="/admin"
-                            class="block px-4 py-2 text-center font-semibold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                            ˋ進入管理後台
-                        </NuxtLink>
-                    </li>
+                    <template v-if="user">
+                        <li>
+                            <NuxtLink
+                                to="/admin"
+                                class="block px-4 py-2 text-center font-semibold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                            >
+                                ˋ進入管理後台
+                            </NuxtLink>
+                        </li>
 
-                    <li>
-                        <a
+                        <li>
+                            <a
+                                class="block px-4 py-2 text-center font-semibold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                @click="userSignOut"
+                            >
+                                登出
+                            </a>
+                        </li>
+                    </template>
+                    <li v-else>
+                        <NuxtLink
+                            to="/login"
                             class="block px-4 py-2 text-center font-semibold hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                            @click="userSignOut"
                         >
-                            登出
-                        </a>
+                            登入
+                        </NuxtLink>
                     </li>
                 </ul>
             </div>
