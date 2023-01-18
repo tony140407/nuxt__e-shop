@@ -4,14 +4,26 @@ import { getFirestore } from 'firebase/firestore'
 import { getAnalytics } from 'firebase/analytics'
 
 export default defineNuxtPlugin((nuxtApp) => {
+    const config = useRuntimeConfig()
+    const {
+        API_KEY,
+        AUTH_DOMAIN,
+        DATABASE_URL,
+        PROJECT_ID,
+        STORAGE_BUCKET,
+        MESSAGING_SENDER_ID,
+        APP_ID,
+        MEASUREMENT_ID,
+    } = config.public
     const firebaseConfig = {
-        apiKey: 'AIzaSyBBNzhffAocOnBGGL24x0snZcR_iGJKjjg',
-        authDomain: 'nuxt-e-shop.firebaseapp.com',
-        projectId: 'nuxt-e-shop',
-        storageBucket: 'nuxt-e-shop.appspot.com',
-        messagingSenderId: '566838013380',
-        appId: '1:566838013380:web:77a0c890ad6c5f523f8891',
-        measurementId: 'G-2QTL7BPH9H',
+        apiKey: API_KEY,
+        authDomain: AUTH_DOMAIN,
+        databaseURL: DATABASE_URL,
+        projectId: PROJECT_ID,
+        storageBucket: STORAGE_BUCKET,
+        messagingSenderId: MESSAGING_SENDER_ID,
+        appId: APP_ID,
+        measurementId: MEASUREMENT_ID,
     }
 
     // Initialize Firebase
