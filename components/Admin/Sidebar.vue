@@ -1,12 +1,12 @@
 <template>
     <aside class="group w-10 hover:w-64 lg:w-64" aria-label="Sidebar">
         <div
-            class="relative h-full overflow-y-auto rounded bg-gray-800 px-3 py-4 after:absolute after:top-4 after:right-2 after:rounded-full after:font-extrabold after:text-white after:content-['>'] group-hover:after:hidden lg:after:hidden"
+            class="relative h-full overflow-y-auto rounded bg-gray-800 px-3 py-4 after:absolute after:top-4 after:right-4 after:rounded-full after:font-extrabold after:text-white after:content-['>'] group-hover:after:hidden lg:after:hidden"
         >
             <ul class="hidden space-y-3 group-hover:block lg:block">
                 <li>
-                    <a
-                        href="#"
+                    <NuxtLink
+                        to="/admin"
                         class="flex items-center rounded-lg bg-gray-800 p-2 text-base font-normal text-white hover:bg-gray-600"
                     >
                         <svg
@@ -25,11 +25,11 @@
                             class="ml-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-blue-900 p-3 text-sm font-medium text-blue-200"
                             >3</span
                         >
-                    </a>
+                    </NuxtLink>
                 </li>
                 <li>
-                    <a
-                        href="#"
+                    <NuxtLink
+                        to="/admin/orders"
                         class="flex items-center rounded-lg bg-gray-800 p-2 text-base font-normal text-white hover:bg-gray-600"
                     >
                         <svg
@@ -47,11 +47,11 @@
                             ></path>
                         </svg>
                         <span class="ml-3 flex-1 whitespace-nowrap">訂單管理</span>
-                    </a>
+                    </NuxtLink>
                 </li>
                 <li>
-                    <a
-                        href="#"
+                    <NuxtLink
+                        to="/"
                         class="flex items-center rounded-lg bg-gray-800 p-2 text-base font-normal text-white hover:bg-gray-600"
                     >
                         <svg
@@ -68,7 +68,7 @@
                             ></path>
                         </svg>
                         <span class="ml-3 flex-1 whitespace-nowrap">返回首頁</span>
-                    </a>
+                    </NuxtLink>
                 </li>
                 <li>
                     <a

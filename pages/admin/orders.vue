@@ -4,4 +4,4 @@ definePageMeta({
     layout: 'admin',
 })
 </script>
-<template>產品管理頁面</template>
+<template>訂單管理頁面</template>
