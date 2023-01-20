@@ -1,3 +1,9 @@
+<script setup>
+import { useOrdersStore } from '~/store/orders';
+const ordersStore = useOrdersStore();
+// orders only use in this page, so we can fetch orders here
+ordersStore.fetchOrders();
+</script>
 <template>
   <!-- ClientOnly 避免 [Vue warn]: Hydration node mismatch -->
   <ClientOnly>

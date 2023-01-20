@@ -4,8 +4,6 @@ const { $dayjs } = useNuxtApp();
 
 const ordersStore = useOrdersStore();
 
-ordersStore.fetchOrders();
-
 const allOrders = computed(() => {
   return ordersStore.orders;
 });
