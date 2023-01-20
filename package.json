@@ -17,6 +17,7 @@
     "sass-loader": "^13.2.0"
   },
   "dependencies": {
+    "@nuxtjs/dayjs": "^1.4.1",
     "@pinia/nuxt": "^0.4.6",
     "firebase": "^9.15.0",
     "gsap": "^3.11.4",
