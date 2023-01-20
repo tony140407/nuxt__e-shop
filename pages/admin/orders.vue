@@ -1,27 +1,14 @@
 <script setup>
+import { useOrdersStore } from '~/store/orders';
 const { $dayjs } = useNuxtApp();
 
-const orders = ref([]);
-getOrder();
-async function getOrder() {
-  await useFetch('/api/order').then(
-    (res) => {
-      const data = res.data.value;
-      const error = res.error.value;
-      if (error) {
-        // dealing error
-        console.error(error);
-      } else {
-        orders.value = data.orders;
-        console.dir(orders.value);
-      }
-    },
-    (error) => {
-      console.log('exception...');
-      console.log(error);
-    }
-  );
-}
+const ordersStore = useOrdersStore();
+
+ordersStore.fetchOrders();
+
+const allOrders = computed(() => {
+  return ordersStore.orders;
+});
 
 definePageMeta({
   middleware: 'check-login',
@@ -49,7 +36,7 @@ definePageMeta({
         <tbody>
           <tr
             class="border-b bg-white"
-            v-for="eachOrder in orders"
+            v-for="eachOrder in allOrders"
             :key="eachOrder.id"
           >
             <th

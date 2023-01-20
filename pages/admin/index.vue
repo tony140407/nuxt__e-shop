@@ -2,9 +2,11 @@
 import { useProductsStore } from '~/store/products';
 const { $dayjs } = useNuxtApp();
 
-const { products, fetchProducts } = useProductsStore();
-// await fetchProducts();
-console.dir(products);
+const productsStore = useProductsStore();
+// productsStore.fetchProducts();
+const allProducts = computed(() => {
+  return productsStore.products;
+});
 
 definePageMeta({
   middleware: 'check-login',
@@ -32,7 +34,7 @@ definePageMeta({
         <tbody>
           <tr
             class="border-b bg-white"
-            v-for="eachProduct in products"
+            v-for="eachProduct in allProducts"
             :key="eachProduct.id"
           >
             <th
