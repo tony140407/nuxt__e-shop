@@ -14,6 +14,10 @@ const props = defineProps({
 })
 const productDetail = ref(props.productDetail)
 const card_detail_size = ref('XS')
+
+function clickToSeeMorePage(productID) {
+    navigateTo(`/shop/${productID}`)
+}
 </script>
 <template>
     <section
@@ -28,7 +32,7 @@ const card_detail_size = ref('XS')
                 ></div>
                 <button
                     class="absolute bottom-0 left-1/2 hidden w-4/5 -translate-x-1/2 -translate-y-1/2 transform rounded-xl bg-white py-3 ring ring-slate-300 ring-offset-2 group-hover:block"
-                    @click="clickToSeeMorePage(currentProductID)"
+                    @click="clickToSeeMorePage(productDetail.id)"
                 >
                     查看更多
                 </button>
