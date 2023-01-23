@@ -1,6 +1,6 @@
 <script setup>
 import { useCartStore } from '~/store/cart'
-
+const { deleteCart, updateCart } = useCartStore()
 const { $swal } = useNuxtApp()
 // props & emit
 const props = defineProps({
@@ -19,36 +19,23 @@ function handleClick(e) {
         (item) => item.id == cartID && item.product_id == productID,
     )
     currentProduct.qty = method == 'minus' ? currentProduct.qty - 1 : currentProduct.qty + 1
-    changeQty(currentProduct, currentProduct.qty)
-
-    function changeQty(currentProduct, qty) {
-        console.dir({ product_id: currentProduct.product_id, qty: qty })
-        console.log(qty)
-        // const data = {
-        //     data: { product_id: currentProduct.product_id, qty: qty },
-        // }
-        // apiUpdateCart(currentProduct.id, data)
-        //     .then((res) => {
-        //         changeLoading(false)
-        //         if (res.data.success == true) {
-        //             VueSweetalert2({
-        //                 icon: 'success',
-        //                 title: '成功改變商品數量!',
-        //                 timer: 1000,
-        //                 showCloseButton: false,
-        //                 showCancelButton: false,
-        //             })
-        //             getCartData()
-        //         }
-        //     })
-        //     .catch((error) => {
-        //         changeLoading(false)
-        //         console.log(error)
-        //     })
-    }
+    debounce(
+        updateCart(currentProduct.id, {
+            data: { product_id: currentProduct.id, qty: currentProduct.qty },
+        }),
+        500,
+    )
 }
 
-const { deleteCart } = useCartStore()
+function debounce(func, delay) {
+    let debounceTimer
+    return function () {
+        const context = this
+        const args = arguments
+        clearTimeout(debounceTimer)
+        debounceTimer = setTimeout(() => func.apply(context, args), delay)
+    }
+}
 
 function deleteSingleProduct(productDetail) {
     $swal
