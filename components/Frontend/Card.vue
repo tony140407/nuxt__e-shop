@@ -1,4 +1,6 @@
 <script setup>
+import { useCartStore } from '~/store/cart'
+
 const props = defineProps({
     productDetail: {
         type: Object,
@@ -17,6 +19,12 @@ const card_detail_size = ref('XS')
 
 function clickToSeeMorePage(productID) {
     navigateTo(`/shop/${productID}`)
+}
+
+const { addCart } = useCartStore()
+function addProductToCart(id) {
+    const postData = { data: { product_id: id, qty: 1 } }
+    addCart(postData)
 }
 </script>
 <template>
@@ -95,7 +103,7 @@ function clickToSeeMorePage(productID) {
                     </div>
                     <button
                         class="card_addCartBtn w-full rounded-xl bg-red-400 py-3"
-                        @click="addCart()"
+                        @click="addProductToCart(productDetail.id)"
                     >
                         加入購物車
                     </button>
