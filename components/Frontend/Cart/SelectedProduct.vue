@@ -1,4 +1,6 @@
 <script setup>
+import { useCartStore } from '~/store/cart'
+
 const { $swal } = useNuxtApp()
 // props & emit
 const props = defineProps({
@@ -46,6 +48,8 @@ function handleClick(e) {
     }
 }
 
+const { deleteCart } = useCartStore()
+
 function deleteSingleProduct(productDetail) {
     $swal
         .fire({
@@ -60,33 +64,9 @@ function deleteSingleProduct(productDetail) {
         })
         .then((result) => {
             if (result.isConfirmed) {
-                // deleteProduct()
-                console.log('刪除成功')
+                deleteCart(productDetail.id)
             }
         })
-
-    function deleteProduct() {
-        changeLoading(true)
-        apiDeleteCart(productDetail.value.id)
-            .then((res) => {
-                changeLoading(false)
-                if (res.data.success == true) {
-                    // storeData.carts
-                    VueSweetalert2({
-                        icon: 'success',
-                        title: '已從購物車中刪除產品!',
-                        timer: 1000,
-                        showCloseButton: false,
-                        showCancelButton: false,
-                    })
-                    getCartData()
-                }
-            })
-            .catch((error) => {
-                changeLoading(false)
-                console.log(error)
-            })
-    }
 }
 
 const total = computed(() => {
