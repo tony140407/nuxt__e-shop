@@ -1,6 +1,7 @@
 <script setup>
 import { useProductsStore } from '~/store/products';
 import { useOrdersStore } from '~/store/orders';
+const { userSignOut } = useFirebaseAuth();
 const productsStore = useProductsStore();
 const allProductsNum = computed(() => {
   return productsStore.products.length;
@@ -89,7 +90,7 @@ const allOrdersNum = computed(() => {
         </li>
         <li>
           <a
-            href="#"
+            @click="userSignOut"
             class="flex items-center rounded-lg bg-gray-800 p-2 text-base font-normal text-white hover:bg-gray-600"
           >
             <svg
