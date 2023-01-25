@@ -261,16 +261,8 @@ definePageMeta({
           </div>
           <!-- Modal footer -->
           <div
-            class="flex items-center space-x-2 rounded-b border-t border-gray-200 p-6"
+            class="flex items-center justify-end space-x-2 rounded-b border-t border-gray-200 p-6"
           >
-            <button
-              data-modal-hide="defaultModal"
-              type="button"
-              class="rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
-              @click="updateProduct"
-            >
-              修改
-            </button>
             <button
               data-modal-hide="defaultModal"
               type="button"
@@ -278,6 +270,14 @@ definePageMeta({
               @click="isShow = false"
             >
               取消
+            </button>
+            <button
+              data-modal-hide="defaultModal"
+              type="button"
+              class="rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+              @click="updateProduct"
+            >
+              修改
             </button>
           </div>
         </div>
