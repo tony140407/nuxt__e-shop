@@ -5,10 +5,10 @@ const authStore = useAuthStore();
 </script>
 
 <template>
-  <nav class="container mx-auto flex justify-between bg-white p-4">
+  <nav class="container mx-auto flex justify-between bg-white py-4 px-5">
     <NuxtLink to="/" class="flex items-center">
       <span
-        class="self-center whitespace-nowrap text-xl font-semibold text-sky-500"
+        class="self-center whitespace-nowrap text-xl font-semibold text-lime-500"
         >Wardrobe</span
       >
     </NuxtLink>
