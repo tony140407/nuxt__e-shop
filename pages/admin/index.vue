@@ -10,20 +10,7 @@ const allProducts = computed(() => {
 });
 
 const isShow = ref(false);
-const emptyTemplate = {
-  category: '',
-  content: '',
-  description: '',
-  id: '',
-  is_enabled: true,
-  origin_price: 0,
-  price: 0,
-  title: '',
-  unit: '',
-  num: 1,
-  imageUrl: '',
-  imagesUrl: [],
-};
+
 const currentProduct = ref(null);
 
 function showProduct(product) {
@@ -71,6 +58,18 @@ async function updateProduct() {
       console.log(error);
     }
   );
+}
+
+async function deleteProduct() {
+  if (user.value.email !== config.public.ADMIN_MAIL) {
+    $swal.fire({
+      icon: 'error',
+      title: '您沒有權限刪除此產品',
+      text: '請使用管理員帳號登入',
+    });
+    return;
+  }
+  console.log('刪除' + currentProduct.value.id);
 }
 
 definePageMeta({
