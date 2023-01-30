@@ -1,42 +1,21 @@
-# Nuxt 3 Minimal Starter
+# nuxt-e-shop
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![](https://i.imgur.com/eN1Bl3K.jpg)
 
-## Setup
+## 歡迎至 Demo 網站觀看
 
-Make sure to install the dependencies:
+https://nuxt-e-shop.vercel.app/
 
-```bash
-# yarn
-yarn install
+## 專案說明
 
-# npm
-npm install
+以 Nuxt3 製作的練習網站，模擬電商平台購物，並以 Firebase Authentication 做網站登入驗證。
 
-# pnpm
-pnpm install --shamefully-hoist
-```
+## 使用技術
 
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+-   Nuxt3
+-   Pinia (Vuex)
+-   Tailwind
+-   Swiper
+-   SweetAlert2
+-   Font Awesome
+-   GSAP
