@@ -8,6 +8,6 @@ definePageMeta({
     <section>
         <FrontendHomePageBanner />
         <FrontendHomePageIntro />
-        <FrontendHomePageScrollProduct />
+        <LazyFrontendHomePageScrollProduct />
     </section>
 </template>
